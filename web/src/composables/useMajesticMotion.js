@@ -50,6 +50,9 @@ export function useMajesticMotion() {
 
       // Scroll reveals
       reveals.forEach((el) => {
+        // Important: avoid hiding content before ScrollTrigger is ready.
+        // If a page loads with the trigger already past the "start" line,
+        // immediateRender can leave it stuck invisible.
         gsap.fromTo(
           el,
           { y: 20, opacity: 0, filter: 'blur(8px)' },
@@ -58,9 +61,10 @@ export function useMajesticMotion() {
             opacity: 1,
             filter: 'blur(0px)',
             duration: 0.9,
+            immediateRender: false,
             scrollTrigger: {
               trigger: el,
-              start: 'top 86%',
+              start: 'top 92%',
               toggleActions: 'play none none reverse',
             },
           },

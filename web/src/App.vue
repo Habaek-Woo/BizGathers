@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-full bg-[color:var(--bg)] text-[color:var(--fg)]">
+  <div class="min-h-dvh bg-[color:var(--bg)] text-[color:var(--fg)]">
     <div class="bg-grid">
       <SiteNavbar />
       <main class="mx-auto w-full max-w-6xl px-4 pb-16 pt-28 sm:px-6 sm:pt-32">
