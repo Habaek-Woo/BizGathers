@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
 
 import HomePage from '../views/HomePage.vue'
 import DirectoryPage from '../views/DirectoryPage.vue'
@@ -10,7 +10,8 @@ import SupportPage from '../views/SupportPage.vue'
 import BlogPage from '../views/BlogPage.vue'
 
 const router = createRouter({
-  history: createWebHistory(),
+  // GitHub Pages has no SPA rewrites; hash mode avoids blank pages on refresh.
+  history: import.meta.env.VITE_ROUTER_MODE === 'hash' ? createWebHashHistory() : createWebHistory(),
   scrollBehavior() {
     return { top: 0 }
   },
