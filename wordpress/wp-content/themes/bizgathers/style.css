@@ -1,0 +1,78 @@
+/*
+Theme Name: BizGathers
+Theme URI: https://example.com/bizgathers
+Author: BizGathers
+Description: BizGathers block theme (Full Site Editing).
+Requires at least: 6.4
+Tested up to: 6.7
+Requires PHP: 8.1
+Version: 0.1.0
+Text Domain: bizgathers
+*/
+
+/* Theme baseline */
+:root{
+  --bg:#161315;
+  --fg:#f6f3ee;
+  --muted:rgba(246, 243, 238, 0.72);
+  --card:rgba(255, 255, 255, 0.06);
+  --border:rgba(255, 255, 255, 0.12);
+  --brand:#f1c617;
+  --brand-2:rgba(241, 198, 23, 0.22);
+}
+
+body{
+  background:var(--bg);
+  color:var(--fg);
+}
+
+/* Subtle dotted grid background */
+.bg-grid{
+  background-image: radial-gradient(circle at 1px 1px, color-mix(in oklab, var(--fg) 12%, transparent) 1px, transparent 0);
+  background-size: 28px 28px;
+}
+
+/* Utility-ish helpers for patterns */
+.bg-card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+}
+
+.bg-pill{
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--bg) 70%, transparent);
+}
+
+.btn-brand{
+  background: var(--brand);
+  color: #000;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-ghost{
+  background: var(--card);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Improve default block spacing a bit */
+.wp-site-blocks > *{
+  margin-block-start: 0;
+}
+

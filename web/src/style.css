@@ -40,6 +40,13 @@ body {
   color: var(--fg);
 }
 
+/* Smooth anchor jumps (respect reduced motion) */
+@media (prefers-reduced-motion: no-preference) {
+  html:focus-within {
+    scroll-behavior: smooth;
+  }
+}
+
 * {
   box-sizing: border-box;
 }

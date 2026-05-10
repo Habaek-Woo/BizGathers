@@ -23,6 +23,44 @@ npm run build
 
 ---
 
+## WordPress MVP (Option A: Block Theme + Real Business CPT)
+This repo also includes a WordPress **block theme** (Full Site Editing) that implements the MVP as:
+- A real **Business custom post type**
+- **Category** + **Location** taxonomies
+- A Directory page with real **filters** (search/category/location/verified/min rating)
+
+### Theme location
+`BizGathers/wordpress/wp-content/themes/bizgathers/`
+
+### Install (local)
+- Set up a local WordPress install (LocalWP / XAMPP / Laragon).
+- Copy the theme folder into your WordPress install:
+  - `wp-content/themes/bizgathers`
+- In WP Admin:
+  - **Appearance → Themes → Activate** “BizGathers”
+
+### Create data
+- WP Admin → **Businesses** → Add New
+- Set:
+  - Title + description/excerpt
+  - Featured image (optional)
+  - Categories + Locations (taxonomies)
+  - “Business Details” meta box (phone/address/facebook/rating/verified)
+
+### Directory page (with filters)
+1. Create a page named **Directory**
+2. In the page editor, set **Template** to **Directory** (from the template dropdown)
+3. The directory renders via shortcode:
+   - `[bizgathers_directory]`
+
+### Home page
+Create a page named **Home** and set **Template** to **Home**.
+
+> Note: We can later upgrade the directory filters into a native Gutenberg block,
+> but the shortcode is the fastest working MVP.
+
+---
+
 ## Current Implementation (What’s Built)
 - **Pages (routes)**
   - **Home**: `/`

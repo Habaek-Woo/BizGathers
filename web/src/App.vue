@@ -17,20 +17,27 @@ import SiteNavbar from './components/SiteNavbar.vue'
 import SiteFooter from './components/SiteFooter.vue'
 import { rafThrottle } from './utils/rafThrottle'
 
+let scrollEndT = 0
 const onScroll = rafThrottle(() => {
-  // Throttled scroll hook for QA/perf (safe baseline for future scroll work).
+  const y = window.scrollY || document.documentElement.scrollTop || 0
+  document.documentElement.style.setProperty('--scroll-y', String(y))
+
+  // Lightweight "is scrolling" signal for future UI tweaks.
   document.documentElement.dataset.scrolling = 'true'
-  clearTimeout(window.__bgScrollT)
-  window.__bgScrollT = setTimeout(() => {
+  window.clearTimeout(scrollEndT)
+  scrollEndT = window.setTimeout(() => {
     delete document.documentElement.dataset.scrolling
-  }, 120)
+  }, 140)
 })
 
 onMounted(() => {
+  // Initialize once so CSS consumers have a value.
+  onScroll()
   window.addEventListener('scroll', onScroll, { passive: true })
 })
 
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', onScroll)
+  window.clearTimeout(scrollEndT)
 })
 </script>

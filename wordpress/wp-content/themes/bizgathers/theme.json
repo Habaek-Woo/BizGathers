@@ -1,0 +1,57 @@
+{
+  "version": 3,
+  "settings": {
+    "appearanceTools": true,
+    "layout": {
+      "contentSize": "960px",
+      "wideSize": "1200px"
+    },
+    "color": {
+      "defaultPalette": false,
+      "palette": [
+        { "slug": "bg", "name": "Background", "color": "#161315" },
+        { "slug": "fg", "name": "Foreground", "color": "#f6f3ee" },
+        { "slug": "muted", "name": "Muted", "color": "rgba(246, 243, 238, 0.72)" },
+        { "slug": "brand", "name": "Brand", "color": "#f1c617" }
+      ]
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "slug": "system",
+          "name": "System",
+          "fontFamily": "ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\""
+        }
+      ]
+    }
+  },
+  "styles": {
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--system)"
+    },
+    "color": {
+      "background": "var(--wp--preset--color--bg)",
+      "text": "var(--wp--preset--color--fg)"
+    },
+    "elements": {
+      "link": {
+        "color": {
+          "text": "var(--wp--preset--color--brand)"
+        }
+      }
+    },
+    "spacing": {
+      "blockGap": "1.25rem"
+    }
+  },
+  "templateParts": [
+    { "name": "header", "title": "Header", "area": "header" },
+    { "name": "footer", "title": "Footer", "area": "footer" }
+  ],
+  "customTemplates": [
+    { "name": "page-home", "title": "Home", "postTypes": ["page"] },
+    { "name": "page-directory", "title": "Directory", "postTypes": ["page"] },
+    { "name": "page-campaigns", "title": "Campaigns", "postTypes": ["page"] }
+  ]
+}
+

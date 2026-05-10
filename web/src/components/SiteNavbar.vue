@@ -44,9 +44,10 @@
           </button>
           <a
             href="#"
-            class="inline-flex rounded-full bg-[color:var(--brand)] px-4 py-2 text-sm font-semibold text-black hover:brightness-95"
+            class="inline-flex shrink-0 items-center justify-center rounded-full bg-[color:var(--brand)] px-3 py-2 text-xs font-semibold text-black hover:brightness-95 sm:px-4 sm:py-2 sm:text-sm"
           >
-            Get Listed — Free
+            <span class="sm:hidden">Get listed</span>
+            <span class="hidden sm:inline">Get Listed — Free</span>
           </a>
         </div>
       </div>

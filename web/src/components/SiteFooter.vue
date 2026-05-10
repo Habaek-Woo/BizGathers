@@ -30,7 +30,6 @@
               aria-label="Visit BizGathers on Facebook"
             >
               <img :src="facebookIcon" alt="" class="h-4 w-4" />
-              Facebook
             </a>
             <span class="text-xs text-[color:var(--muted)]">Socials: @BizGathers</span>
           </div>
